@@ -57,7 +57,7 @@ exports.patchTodo = async(req, res)=>{
         );
 
         if(updateTodo){
-            return res.json(updateTodo);
+            return res.json({done: 'true'});
         }else{
             return res.json({message: 'Todo not found'});
         }
