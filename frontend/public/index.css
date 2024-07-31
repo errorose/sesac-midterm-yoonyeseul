@@ -1,3 +1,8 @@
+body{
+    background-color: rgb(182, 242, 182);
+    margin: 0;
+}
+
 .title-container{
     background-color: rgb(88, 221, 88);
     display: flex;
@@ -27,6 +32,7 @@
     color: green;
     border: 2px solid green;
     border-radius: 5px;
+    background-color: rgb(182, 242, 182);
 }
 
 .btn-box{
@@ -34,6 +40,7 @@
     border: 2px solid green;
     border-radius: 5px;
     background-color: white;
+    background-color: rgb(182, 242, 182);
 }
 
 .result{
