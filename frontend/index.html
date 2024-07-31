@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>윤예슬</title>
     <link rel="stylesheet" href="./public/index.css">
+    <script src="./public/index.js"></script>
+    <!-- Axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div class="title-container">
@@ -18,19 +21,27 @@
     </div>
 
 
-    
-    <!-- <div class="check-container">
-        <input type="checkbox" name="check" id="one"> delectus aut autem
-        <input type="checkbox" name="check" id="two"> fugiat veniam minus
-        <input type="checkbox" name="check" id="three"> laboriosam molitia et enim quasiadipisci quia provident illum
-        <input type="checkbox" name="check" id="four"> illo expedita consequatur quia in
-        <input type="checkbox" name="check" id="five"> molestiae perspiciatis ipsa
-        <input type="checkbox" name="check" id="six"> quis ut nam facilis et officia qui
-        <input type="checkbox" name="check" id="seven"> et porro tempora
-        <input type="checkbox" name="check" id="eight"> qui ullam ratione quibusdam voluptatem quia omnis
-        <input type="checkbox" name="check" id="nine"> quo adipisci enim quam ut ab
-    </div> -->
+    <div id="resultBox" class="result"></div>
 
-    <script src="./public/index.js"></script>
+    <script>
+        const resultBox = document.querySelector('#resultBox');
+
+        async function getTodos(){
+            console.log('btn click');
+
+            try{
+                const response = await axios.get('https://jsonplaceholder.typicode.com/todos');
+                console.log('response >> ', response);
+
+                const imgUrl = response.data.message; 
+                const apiImg = `<img src="${imgUrl}" alt="apiImg" />`
+                resultBox.innerHTML = apiImg;
+            }catch(error){
+                console.error(error);
+                resultBox.textContent = '알 수 없는 오류...'
+                resultBox.style.color = 'red'
+            }
+        }
+    </script>
 </body>
 </html>
