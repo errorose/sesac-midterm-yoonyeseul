@@ -1,0 +1,11 @@
+### 투두 생성
+POST http://localhost:8080/todos
+Content-Type: application/json; charset=UTF-8
+
+{
+  "title": "점심 맛있게 먹기",
+  "done": true
+}
+
+### 투두 전체 조회
+GET http://localhost:8080/todos
