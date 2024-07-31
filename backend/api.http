@@ -9,3 +9,6 @@ Content-Type: application/json; charset=UTF-8
 
 ### 투두 전체 조회
 GET http://localhost:8080/todos
+
+### 특정 ID를 갖는 투두 조회
+GET http://localhost:8080/todos/1

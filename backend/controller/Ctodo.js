@@ -28,7 +28,17 @@ exports.getTodoList = async(req, res)=>{
 }
 
 exports.getTodo = async(req, res)=>{
-    
+    try{
+        const {id} = req.params;
+        const todo = await Todo.findOne({
+            where: {id},
+        });
+
+        res.json(todo);
+    }catch(error){
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
 }
 
 
