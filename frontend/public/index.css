@@ -1,0 +1,41 @@
+.title-container{
+    background-color: rgb(88, 221, 88);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-container > img{
+    width: 400px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+.title-container > span{
+    color: white;
+    font-size: 100px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.input-container{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.input-box{
+    color: green;
+    border: 2px solid green;
+    border-radius: 5px;
+}
+
+.btn-box{
+    color: green;
+    border: 2px solid green;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.check-container{
+    text-align: center;
+}
