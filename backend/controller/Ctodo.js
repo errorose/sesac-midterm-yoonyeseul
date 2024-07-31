@@ -41,5 +41,40 @@ exports.getTodo = async(req, res)=>{
     }
 }
 
+exports.patchTodo = async(req, res)=>{
+    try{
+        const {id} = req.params;
+        const {title, done} = req.body;
+        const updateTodo = await Todo.update(
+            {title, done},
+            {where: {id}}
+        );
+
+        res.json(updateTodo);
+    }catch(error){
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+}
+
+exports.deleteTodo = async(req, res)=>{
+    try{
+        const {id} = req.params;
+        const delTodo = await Todo.destroy({
+            where: {id}
+        });
+        console.log(delTodo);
+
+        if(delTodo){
+            return res.json({message: 'Todo deleted successfully'});
+        }else{
+            return res.json({message: 'Todo not found'});
+        }
+    }catch(error){
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+}
+
 
 
