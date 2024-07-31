@@ -46,3 +46,40 @@ body{
 .result{
     background-color: pink;
 }
+
+@media (max-width: 540px){
+    .title-container{
+        flex-direction: column;
+    }
+
+    .title-container > img{
+        width: 180px;
+        height: 50px;
+    }
+
+    .title-container > span{
+        font-size: 50px;
+    }
+}
+
+@media screen and (min-width: 540px) and (max-width: 960px){
+    .title-container > img{
+        width: 120px;
+        height: 50px;
+    }
+
+    .title-container > span{
+        font-size: 50px;
+    }
+}
+
+@media(min-width: 960px){
+    .title-container > img{
+        width: 120px;
+        height: 50px;
+    }
+
+    .title-container > span{
+        font-size: 50px;
+    }
+}
