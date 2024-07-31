@@ -34,7 +34,13 @@ exports.getTodo = async(req, res)=>{
             where: {id},
         });
 
-        res.json(todo);
+        if(todo){
+            return res.json(todo);
+        }else{
+            return res.json({message: 'Todo not found'});
+        }
+
+        // res.json(todo);
     }catch(error){
         console.error(error);
         res.status(500).send('Internal Server Error');
@@ -50,7 +56,13 @@ exports.patchTodo = async(req, res)=>{
             {where: {id}}
         );
 
-        res.json(updateTodo);
+        if(updateTodo){
+            return res.json(updateTodo);
+        }else{
+            return res.json({message: 'Todo not found'});
+        }
+
+        // res.json(updateTodo);
     }catch(error){
         console.error(error);
         res.status(500).send('Internal Server Error');

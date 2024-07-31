@@ -14,7 +14,7 @@ GET http://localhost:8080/todos
 GET http://localhost:8080/todos/1
 
 ### 특정 ID를 갖는 투두 수정
-PATCH http://localhost:8080/todos/2
+PATCH http://localhost:8080/todos/1
 Content-Type: application/json; charset=UTF-8
 
 {
