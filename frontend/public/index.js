@@ -6,8 +6,6 @@ async function getTodos(){
     try{
         const response = await axios.get('https://jsonplaceholder.typicode.com/todos');
         console.log('response >> ', response);
-        response.json();
-
         const apiUrl = response.data; 
         const apiTodo = `<input type="checkbox" value="${apiUrl}"/>`
         resultBox.innerHTML = apiTodo;
